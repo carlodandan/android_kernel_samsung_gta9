@@ -1,4 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat
+
 obj-$(CONFIG_DRM_PANEL_ARM_VERSATILE) += panel-arm-versatile.o
 obj-$(CONFIG_DRM_PANEL_ASUS_Z00T_TM5P5_NT35596) += panel-asus-z00t-tm5p5-n35596.o
 obj-$(CONFIG_DRM_PANEL_BOE_HIMAX8279D) += panel-boe-himax8279d.o
@@ -19,6 +21,8 @@ obj-$(CONFIG_DRM_PANEL_LG_LB035Q02) += panel-lg-lb035q02.o
 obj-$(CONFIG_DRM_PANEL_LG_LG4573) += panel-lg-lg4573.o
 obj-$(CONFIG_DRM_PANEL_NEC_NL8048HL11) += panel-nec-nl8048hl11.o
 obj-$(CONFIG_DRM_PANEL_NOVATEK_NT35510) += panel-novatek-nt35510.o
+obj-$(CONFIG_DRM_PANEL_NOVATEK_NT35695B_VDO) += panel-nt35695b-auo-vdo.o
+obj-$(CONFIG_DRM_PANEL_NOVATEK_NT36672A_VDO) += panel-nt36672a-rt4801-vdo.o
 obj-$(CONFIG_DRM_PANEL_NOVATEK_NT39016) += panel-novatek-nt39016.o
 obj-$(CONFIG_DRM_PANEL_MANTIX_MLAF057WE51) += panel-mantix-mlaf057we51.o
 obj-$(CONFIG_DRM_PANEL_OLIMEX_LCD_OLINUXINO) += panel-olimex-lcd-olinuxino.o
@@ -53,3 +57,78 @@ obj-$(CONFIG_DRM_PANEL_TPO_TPG110) += panel-tpo-tpg110.o
 obj-$(CONFIG_DRM_PANEL_TRULY_NT35597_WQXGA) += panel-truly-nt35597.o
 obj-$(CONFIG_DRM_PANEL_VISIONOX_RM69299) += panel-visionox-rm69299.o
 obj-$(CONFIG_DRM_PANEL_XINPENG_XPP055C272) += panel-xinpeng-xpp055c272.o
+obj-$(CONFIG_DRM_PANEL_SAMSUNG_ANA6705_CMD) += panel-samsung-ana6705-cmd.o
+obj-$(CONFIG_DRM_PANEL_SAMSUNG_ANA6705_CMD_FHDP) += panel-samsung-ana6705-cmd-fhdp.o
+obj-$(CONFIG_DRM_PANEL_HX_NT37701_DPHY_CMD) += panel-hx-nt37701-dphy-cmd.o
+obj-$(CONFIG_DRM_PANEL_HX_NT37701_DPHY_CMD_120HZ) += panel-hx-nt37701-dphy-cmd-120hz.o
+obj-$(CONFIG_DRM_PANEL_TIANMA_NT37701A_DPHY_CMD_144HZ) += panel-tianma-nt37701a-dphy-cmd-144hz.o
+obj-$(CONFIG_DRM_PANEL_TRULY_TD4330_VDO) += panel-truly-td4330-vdo.o
+obj-$(CONFIG_DRM_PANEL_TRULY_TD4330_CMD) += panel-truly-td4330-cmd.o
+obj-$(CONFIG_DRM_PANEL_SAMSUNG_OP_CMD) += panel-samsung-op-cmd.o
+obj-$(CONFIG_DRM_PANEL_SAMSUNG_OP_CMD_MSYNC2) += panel-samsung-op-cmd-msync2.o
+ifneq ($(wildcard $(srctree)/$(src)/k6895v1_64_95t_alpha),)
+obj-$(CONFIG_DRM_PANEL_K6895V1_64_95T_ALPHA_CMD) += k6895v1_64_95t_alpha/panel-k6895v1-64-95t-alpha-cmd.o
+endif
+obj-$(CONFIG_DRM_PANEL_TRULY_FT8756_VDO) += panel-truly-ft8756-vdo.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_JDI_NT36672C_CPHY_VDO) += panel-alpha-jdi-nt36672c-cphy-vdo.o
+obj-$(CONFIG_DRM_PANEL_SC_NT36672C_VDO_120HZ) += panel-sc-nt36672c-vdo-120hz.o
+obj-$(CONFIG_DRM_PANEL_TIANMA_R66451_CMD_120HZ) += panel-tianma-r66451-cmd-120hz.o
+obj-$(CONFIG_DRM_PANEL_TIANMA_R66451_CMD_120HZ_WA) += panel-tianma-r66451-cmd-120hz-wa.o
+obj-$(CONFIG_DRM_PANEL_TIANMA_NT36672E_VDO_120HZ_HFP) += panel-tianma-nt36672e-vdo-120hz-hfp.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_JDI_NT36672E_CPHY_VDO) += panel-alpha-jdi-nt36672e-cphy-vdo.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_JDI_NT36672E_VDO_120HZ) += panel-alpha-jdi-nt36672e-vdo-120hz.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_JDI_NT36672E_VDO_144HZ) += panel-alpha-jdi-nt36672e-vdo-144hz.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_JDI_NT36672E_VDO_60HZ) += panel-alpha-jdi-nt36672e-vdo-60hz.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_JDI_NT36672E_VDO_120HZ_HFP) += panel-alpha-jdi-nt36672e-vdo-120hz-hfp.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_JDI_NT36672E_VDO_144HZ_HFP) += panel-alpha-jdi-nt36672e-vdo-144hz-hfp.o
+obj-$(CONFIG_DRM_PANEL_TRULY_NT35595_CMD) += panel-truly-nt35595-cmd.o
+obj-$(CONFIG_DRM_PANEL_SAMSUNG_S68FC01_VDO_AOD) += panel-samsung-s68fc01-vdo-aod.o
+obj-$(CONFIG_DRM_PANEL_ALPHA_SAMSUNG_S6E3HAE_CMD_120HZ) += panel-alpha-samsung-s6e3hae-wqhd-dphy-cmd-120hz.o
+obj-$(CONFIG_DRM_PANEL_TIANMA_NT36672C_CPHY_VDO_90HZ_RT4801) += panel-tianma-nt36672c-cphy-vdo-90hz-rt4801.o
+obj-$(CONFIG_DRM_PANEL_NT37801_MSYNC2_RTE) += panel-nt37801-msync2-rte.o
+obj-$(CONFIG_DRM_PANEL_NT36672C_S2DPS01_VDO) += panel-nt36672c-s2dps01-vdo.o
+obj-$(CONFIG_DRM_PANEL_S6E3FC3_S2DOS15_CMD) += panel-s6e3fc3-s2dos15-cmd.o
+obj-$(CONFIG_DRM_PANEL_S6E3FC3_S2DOS15_CMD_2340) += panel-s6e3fc3-s2dos15-cmd-2340.o
+obj-$(CONFIG_DRM_PANEL_S6E8FC3_S2DOS15A01_VDO) += panel-s6e8fc3-s2dos15a01-vdo.o
+# Tab A9 code for SR-AX6739A-01-282 by wenghailong at 20230502 start
+obj-$(CONFIG_DRM_PANEL_BIAS_VDO) += panel-bias.o
+obj-$(CONFIG_DRM_LCD_HX83102E_XX_INX_VIDEO) += ot11/lcd_hx83102e_xx_inx_video.o
+# Tab A9 code for SR-AX6739A-01-713 by suyurui at 20230601 start
+obj-$(CONFIG_DRM_LCD_NL9951_GX_BOE_VIDEO) += ot11/lcd_nl9951_gx_boe_video.o
+# Tab A9 code for SR-AX6739A-01-713 by suyurui at 20230601 end
+# Tab A9 code for SR-AX6739A-01-719 by zhawei at 20230610 start
+obj-$(CONFIG_DRM_LCD_HX83102E_LC_HKC_VIDEO) += ot11/lcd_hx83102e_lc_hkc_video.o
+# Tab A9 code for SR-AX6739A-01-719 by zhawei at 20230610 end
+# Tab A9 code for SR-AX6739A-01-725 by hehaoran5 at 20230609 start
+obj-$(CONFIG_DRM_LCD_JD9366TC_XX_HKC_VIDEO) += ot11/lcd_jd9366tc_xx_hkc_video.o
+# Tab A9 code for SR-AX6739A-01-725 by hehaoran5 at 20230609 end
+# Tab A9 code for SR-AX6739A-01-619 by yuli at 20230602 start
+obj-$(CONFIG_DRM_LCD_NT36523D_LC_HSD_VIDEO) += ot11/lcd_nt36523d_lc_hsd_video.o
+# Tab A9 code for SR-AX6739A-01-619 by yuli at 20230602 end
+# Tab A9 code for SR-AX6739A-01-768 by liudi at 20230715 start
+obj-$(CONFIG_DRM_LCD_HX83102E_CD_INX_VIDEO) += ot11/lcd_hx83102e_cd_inx_video.o
+# Tab A9 code for SR-AX6739A-01-768 by liudi at 20230715 end
+obj-$(CONFIG_DRM_LCD_HX83102E_GX_HSD_INCELL_VIDEO) += ot11/lcd_hx83102e_gx_hsd_incell_video.o
+obj-$(CONFIG_DRM_LCD_DEFAULT_MIPI_FHD_VIDEO) += ot11/lcd_default_mipi_fhd_video.o
+# Tab A9 code for SR-AX6739A-01-282 by wenghailong at 20230502 end
+
+mediatek-drm-gateic-y := mtk_drm_panel_i2c.o \
+		  mtk_drm_gateic_rt4801h.o \
+		  mtk_drm_gateic_rt4831a.o \
+		  mtk_drm_gateic.o
+
+mediatek-drm-panel-drv-y :=  \
+		  mtk_round_corner/mtk_drm_rc.o \
+		  mtk_drm_panel_helper.o \
+		  mtk_drm_panel_helper_dbi.o \
+		  mtk_drm_panel_helper_dpi.o \
+		  mtk_drm_panel_helper_dsi.o \
+		  mtk_drm_panel_drv_dbi.o \
+		  mtk_drm_panel_drv_dpi.o \
+		  mtk_drm_panel_drv_dsi.o \
+		  mtk_drm_panel_drv.o
+
+obj-$(CONFIG_DRM_MEDIATEK_PANEL) += mediatek-drm-gateic.o
+obj-$(CONFIG_DRM_MEDIATEK_PANEL) += mediatek-drm-panel-drv.o
+
+ccflags-$(CONFIG_DRM_MEDIATEK_PANEL) += -I$(srctree)/drivers/leds/
