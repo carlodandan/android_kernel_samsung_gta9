@@ -469,7 +469,10 @@ static const char * const fw_path[] = {
 	"/lib/firmware/updates/" UTS_RELEASE,
 	"/lib/firmware/updates",
 	"/lib/firmware/" UTS_RELEASE,
-	"/lib/firmware"
+/* TabA9 code for SR-AX6739A-01-173 by wangaolong at 2023/05/18 start */
+	"/lib/firmware",
+	"/efs/wifi"
+/* TabA9 code for SR-AX6739A-01-173 by wangaolong at 2023/05/18 end */
 };
 
 /*
