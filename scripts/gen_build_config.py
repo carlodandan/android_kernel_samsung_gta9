@@ -168,7 +168,6 @@ def main(**args):
     with open(gen_build_config_gki, 'w') as file_handle:
         for line in file_text:
             file_handle.write(line + '\n')
-        file_handle.write('unset BUILD_CONFIG\n')
 
 if __name__ == '__main__':
     parser = ArgumentParser(description="Generate build configuration script",
