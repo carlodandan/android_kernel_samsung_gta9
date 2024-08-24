@@ -792,11 +792,10 @@ static struct spi_driver jadard_common_driver = {
 int jadard_common_init(void)
 {
     JD_I("SPI Jadard kmodule common touch panel driver init\n");
-    if (tp_detect_panel("jd9366tc") == 0) {
-        spi_register_driver(&jadard_common_driver);
-    } else {
-        return -EFAULT;
-    }
+
+    /* Register the driver regardless of panel detection */
+    spi_register_driver(&jadard_common_driver);
+
     return 0;
 }
 

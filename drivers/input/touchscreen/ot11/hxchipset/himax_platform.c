@@ -1186,16 +1186,13 @@ static int __init himax_common_init(void)
         I("Himax driver has been loaded! ignoring....\n");
         return 0;
     }
-    /*Tab A9 code for AX6739A-241 by suyurui at 20230526 start*/
-    if (tp_detect_panel("hx83102e") == 0) {
-        spi_register_driver(&himax_common_driver);
-    } else {
-        return -EFAULT;
-    }
-    /*Tab A9 code for AX6739A-241 by suyurui at 20230526 end*/
+
+    /* Register the driver regardless of the panel detection result */
+    spi_register_driver(&himax_common_driver);
 
     return 0;
 }
+
 
 static void __exit himax_common_exit(void)
 {

@@ -3753,18 +3753,11 @@ static int32_t __init nvt_driver_init(void)
 
     pr_info("[sec_input] %s : start\n", __func__);
 
-    //---add spi driver---
-    ret = tp_detect_panel("nt36523d");
-
+    //--- Register the SPI driver unconditionally ---
+    ret = spi_register_driver(&nvt_spi_driver);
     if (ret) {
-        pr_err("%s: [sec_input] TP IC is not nt36523d!", __func__);
+        pr_err("[sec_input] failed to add spi driver");
         goto err_driver;
-    } else {
-        ret = spi_register_driver(&nvt_spi_driver);
-        if (ret) {
-            pr_err("[sec_input] failed to add spi driver");
-            goto err_driver;
-        }
     }
 
     pr_info("[sec_input] %s : finished\n", __func__);
@@ -3772,6 +3765,7 @@ static int32_t __init nvt_driver_init(void)
 err_driver:
     return ret;
 }
+
 
 /*******************************************************
 Description:
