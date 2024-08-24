@@ -691,6 +691,11 @@ static const struct of_device_id spidev_dt_ids[] = {
 	{ .compatible = "lwn,bk4" },
 	{ .compatible = "dh,dhcom-board" },
 	{ .compatible = "menlo,m53cpld" },
+    /* Tab A9 code for SR-AX6739A-01-392 by gaochao at 20230426 start */
+#if !defined(SECURITY_IC_ENABLE_SPI_VIA_SPI_CLK) // CLK_IFRAO_SPI3-/dev/spidev3.0
+	{ .compatible = "sec,grdm-spi" },
+#endif
+    /* Tab A9 code for SR-AX6739A-01-392 by gaochao at 20230426 end */
 	{},
 };
 MODULE_DEVICE_TABLE(of, spidev_dt_ids);

@@ -1233,7 +1233,7 @@ static int machine_constraints_voltage(struct regulator_dev *rdev,
 
 		/* else require explicit machine-level constraints */
 		if (cmin <= 0 || cmax <= 0 || cmax < cmin) {
-			rdev_err(rdev, "invalid voltage constraints\n");
+			rdev_err(rdev, "invalid voltage constraints,cmin=%d,cmax=%d\n",cmin,cmax);
 			return -EINVAL;
 		}
 
