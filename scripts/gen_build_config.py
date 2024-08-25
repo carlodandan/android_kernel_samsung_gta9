@@ -48,7 +48,7 @@ def main(**args):
     build_mode = args["build_mode"]
     abi_mode = args["abi_mode"]
     out_file = args["out_file"]
-    if ((project == '') and (kernel_defconfig == ''))  or (out_file == ''):
+    if ((project == '') and (kernel_defconfig == '')) or (out_file == ''):
         help()
 
     # get gen_build_config.py absolute path and name by sys.argv[0]: /***/{kernel dir}/scripts/gen_build_config.py
@@ -73,7 +73,7 @@ def main(**args):
         project_defconfig_name = '%s_defconfig' % (project)
     defconfig_dir = ''
     if os.path.exists('%s/arch/arm/configs/%s' % (abs_kernel_dir, project_defconfig_name)):
-        defconfig_dir = 'arch/arm/comfigs'
+        defconfig_dir = 'arch/arm/configs'
     elif os.path.exists('%s/arch/arm64/configs/%s' % (abs_kernel_dir, project_defconfig_name)):
         defconfig_dir = 'arch/arm64/configs'
     else:
