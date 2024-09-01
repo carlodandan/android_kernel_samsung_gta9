@@ -379,7 +379,7 @@ int tp_detect_panel(const char *tp_ic)
     const char *panel_name = tp_choose_panel();
     enum boot_mode_t boot_mode = tp_get_boot_mode();
     /*Tab A9 code for AX6739A-1684 by suyurui at 20230628 start*/
-    if ((boot_mode != NORMAL_BOOT) && (boot_mode != ALARM_BOOT)) {
+    if ((boot_mode != NORMAL_BOOT) && (boot_mode != ALARM_BOOT) && (boot_mode != RECOVERY_BOOT)) {
     /*Tab A9 code for AX6739A-1684 by suyurui at 20230628 end*/
         TP_ERROR("tp init fail because boot_mode = %d\n", boot_mode);
         return -EINVAL;
